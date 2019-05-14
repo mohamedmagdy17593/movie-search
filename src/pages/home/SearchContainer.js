@@ -12,14 +12,6 @@ import styles from '../../ui/styles'
 import * as api from '../../api'
 
 const SearchContainer = React.forwardRef((_props, ref) => {
-  // const [movieName, setMovieName] = React.useState('')
-  // const [movieNameDebounced] = useDebounce(movieName, 300)
-  // const searchResult = useAsync(api.search, {
-  //   movieName: movieNameDebounced,
-  //   watch: movieNameDebounced,
-  // })
-  // console.log({movieName, movieNameDebounced, searchResult})
-
   return (
     <Container>
       <Downshift
@@ -37,7 +29,7 @@ const SearchContainer = React.forwardRef((_props, ref) => {
           <div>
             <Input
               ref={ref}
-              css={{marginBottom: styles.spaces[4]}}
+              css={{marginBottom: styles.spaces[3]}}
               oneLine
               {...getInputProps({
                 placeholder: 'Search for a movie',
@@ -60,16 +52,16 @@ const SearchContainer = React.forwardRef((_props, ref) => {
 
 function SearchList({movieName, getMenuProps, getItemProps, highlightedIndex}) {
   const [movieNameDebounced] = useDebounce(movieName, 300)
-  const searchResult = useAsync(api.search, {
+  const {value: movies} = useAsync(api.search, {
     movieName: movieNameDebounced,
     watch: movieNameDebounced,
   })
-  console.log({movieName, movieNameDebounced, searchResult})
+  console.log({movieName, movieNameDebounced, movies})
 
   return (
     <ul {...getMenuProps()}>
-      {searchResult.value &&
-        searchResult.value.results.map((movie, index) => (
+      {movies &&
+        movies.results.map((movie, index) => (
           <li
             {...getItemProps({
               key: movie.id,
