@@ -6,8 +6,13 @@
     "@atlaskit/css-reset": "^4.0.1",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
+    "@reach/dialog": "^0.2.8",
+    "ky": "^0.11.0",
     "react": "^16.8.6",
+    "react-async": "^6.2.0",
     "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
+    "use-debounce": "^2.0.0",
     "wouter": "^1.2.3"
   },
   "scripts": {
