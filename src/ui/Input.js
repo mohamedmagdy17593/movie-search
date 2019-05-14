@@ -3,10 +3,10 @@ import styles from './styles'
 
 const Input = styled.input(props => [
   {
-    padding: 12,
+    padding: styles.spaces[2],
     width: '100%',
     boxSizing: 'border-box',
-    borderRadius: 5,
+    borderRadius: styles.spaces[0],
     border: `2px solid ${styles.color.lightGray}`,
     ':focus': {
       outline: 'none',

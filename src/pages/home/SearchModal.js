@@ -4,7 +4,7 @@ import {jsx} from '@emotion/core'
 import React from 'react'
 import {useAsync} from 'react-async'
 import {useDebounce} from 'use-debounce'
-import {DialogOverlay} from '@reach/dialog'
+import {DialogOverlay, DialogContent} from '@reach/dialog'
 import {MdClose} from 'react-icons/md'
 
 import Input from '../../ui/Input'
@@ -39,26 +39,42 @@ const SearchContainer = React.forwardRef((_props, ref) => {
 const SearchModal = React.forwardRef(({showDialog, toggleShowDialog}, ref) => {
   return (
     <DialogOverlay
-      css={{background: styles.color.lighterGray}}
       initialFocusRef={ref}
       isOpen={showDialog}
+      onDismiss={toggleShowDialog}
     >
-      <div css={{display: 'flex', justifyContent: 'flex-end'}}>
-        <button
+      <DialogContent
+        css={{
+          width: '100%',
+          height: '100%',
+          margin: 0,
+          boxSizing: 'border-box',
+          background: styles.color.lighterGray,
+          padding: 0,
+        }}
+      >
+        <div
           css={{
-            cursor: 'pointer',
-            border: 0,
-            backgroundColor: 'transparent',
-            lineHeight: 0,
-            fontSize: 18,
-            padding: 12,
+            display: 'flex',
+            justifyContent: 'flex-end',
           }}
-          onClick={toggleShowDialog}
         >
-          <MdClose />
-        </button>
-      </div>
-      <SearchContainer ref={ref} />
+          <button
+            css={{
+              cursor: 'pointer',
+              border: 0,
+              backgroundColor: 'transparent',
+              lineHeight: 0,
+              fontSize: 24,
+              padding: styles.spaces[4],
+            }}
+            onClick={toggleShowDialog}
+          >
+            <MdClose />
+          </button>
+        </div>
+        <SearchContainer ref={ref} />
+      </DialogContent>
     </DialogOverlay>
   )
 })

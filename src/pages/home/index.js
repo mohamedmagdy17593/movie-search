@@ -5,7 +5,7 @@ import React from 'react'
 
 import Input from '../../ui/Input'
 import useToggle from '../../utils/useToggle'
-import SearchModal from './SearchContainer'
+import SearchModal from './SearchModal'
 import styles from '../../ui/styles'
 
 function Home() {
