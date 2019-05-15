@@ -3,10 +3,10 @@ import {jsx} from '@emotion/core'
 
 import React from 'react'
 
-import Input from '../../ui/Input'
 import useToggle from '../../utils/useToggle'
 import SearchModal from './SearchModal'
 import styles from '../../ui/styles'
+import Button from '../../ui/Button'
 
 function Home() {
   const [showDialog, toggleShowDialog] = useToggle(false)
@@ -20,13 +20,8 @@ function Home() {
           fontSize: 48,
         }}
       >
-        MovieSearch {'🎬'}
+        Movie <Button onClick={toggleShowDialog}>Search</Button> {'🎬'}
       </h1>
-      <Input
-        css={{width: '100%'}}
-        placeholder="Search for a movie"
-        onClick={toggleShowDialog}
-      />
       <SearchModal
         ref={focusRef}
         showDialog={showDialog}

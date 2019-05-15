@@ -19,6 +19,7 @@ const SearchModal = React.forwardRef(({showDialog, toggleShowDialog}, ref) => {
         css={{
           width: '100%',
           height: '100%',
+          overflow: 'auto',
           margin: 0,
           boxSizing: 'border-box',
           background: styles.color.lighterGray,
