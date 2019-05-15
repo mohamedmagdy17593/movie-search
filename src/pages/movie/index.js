@@ -17,7 +17,7 @@ function Movie() {
     return <Loading />
   }
   return (
-    <div css={{margin: `${styles.spaces[4]}px 0`}}>
+    <div css={{display: 'inline-block', margin: `${styles.spaces[4]}px 0`}}>
       <MovieDetails movie={movie} />
     </div>
   )

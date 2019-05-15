@@ -6,6 +6,8 @@ import ImageFallback from '../../ui/ImageFallback'
 import Rate from '../../components/Rate'
 import Genres from '../../components/Genres'
 
+import imdb from './imdb.png'
+
 function MovieDetails({movie}) {
   console.log(movie)
   return (
@@ -42,6 +44,14 @@ function MovieDetails({movie}) {
           {'📅'} {movie.release_date}
         </h4>
         <p>{movie.overview}</p>
+        <br />
+        <a
+          href={`https://www.imdb.com/title/${movie.imdb_id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={imdb} alt="imdb" />
+        </a>
       </div>
     </div>
   )
