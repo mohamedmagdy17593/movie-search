@@ -1,14 +1,11 @@
 import React from 'react'
-import Img from 'react-image'
+import ReactImageFallback from 'react-image-fallback'
 
-function ImageFallback({src, ...rest}) {
+function ImageFallback(props) {
   return (
-    <Img
-      src={[
-        src,
-        'http://via.placeholder.com/300x450.png?text=Not+photo',
-      ].flatMap(i => i)} // to flat src if it array or string
-      {...rest}
+    <ReactImageFallback
+      fallbackImage="http://via.placeholder.com/300x450.png?text=Not+photo"
+      {...props}
     />
   )
 }

@@ -2,6 +2,7 @@
 import {jsx} from '@emotion/core'
 
 import React from 'react'
+import {useLocation} from 'wouter'
 import {useAsync} from 'react-async'
 import {useDebounce} from 'use-debounce'
 import Downshift from 'downshift'
@@ -15,10 +16,11 @@ import ImageFallback from '../../ui/ImageFallback'
 import {scrollTo} from '../../utils/domHelpers'
 
 const SearchContainer = React.forwardRef((_props, ref) => {
+  const [, navigate] = useLocation()
   const [inputValue, setInputValue] = React.useState('')
   return (
     <Downshift
-      onChange={movie => console.log(movie)}
+      onChange={movie => navigate(`/movie/${movie.id}`)}
       itemToString={movie => (movie ? movie.title : '')}
       inputValue={inputValue}
       defaultIsOpen={true}

@@ -9,4 +9,8 @@ function search({movieName}) {
     .json()
 }
 
-export {search}
+function find({movieId}) {
+  return ky.get(`${baseUrl}/movie/${movieId}?api_key=${apiKey}`).json()
+}
+
+export {search, find}
