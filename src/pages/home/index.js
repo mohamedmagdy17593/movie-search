@@ -6,7 +6,7 @@ import React from 'react'
 import useToggle from '../../utils/useToggle'
 import SearchModal from './SearchModal'
 import styles from '../../ui/styles'
-import Button from '../../ui/Button'
+import {Button} from '../../ui/Button'
 
 function Home() {
   const [showDialog, toggleShowDialog] = useToggle(false)

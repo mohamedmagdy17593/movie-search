@@ -8,5 +8,12 @@ import '@atlaskit/css-reset'
 import '@reach/dialog/styles.css'
 
 import App from './App'
+import GlobalStyles from './ui/GlobalStyles'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  document.getElementById('root'),
+)

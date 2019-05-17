@@ -7,7 +7,7 @@ import {useAsync} from 'react-async'
 import {useDebounce} from 'use-debounce'
 import Downshift from 'downshift'
 
-import Input from '../../ui/Input'
+import {Input} from '../../ui/Input'
 import Container from '../../ui/Container'
 import ListContainer from '../../ui/ListContainer'
 import styles from '../../ui/styles'

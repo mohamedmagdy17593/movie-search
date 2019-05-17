@@ -10,8 +10,12 @@ const Button = styled.button({
   borderRadius: styles.spaces[1],
   ':hover': {
     cursor: 'pointer',
+    textDecoration: 'none',
     background: styles.color.lightBlue,
+    color: 'white',
   },
 })
 
-export default Button
+const Link = Button.withComponent('a')
+
+export {Button, Link}
